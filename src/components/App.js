@@ -3,13 +3,13 @@ import React, { useState } from "react"
 
 function App() {
   const [date, setDate] = useState("empty");
-  const [currentImage, setCurrentImage] = useState("");
+  const [currentImage, setCurrentImage] = useState(null);
   const handleGetAPOD = async () => {
     await fetch (`https://api.nasa.gov/planetary/apod?api_key=${process.env.REACT_APP_API_KEY}&count=1`, {
       method: "GET",
     })
       .then(response => response.json())
-      .then(data => console.log(data[0].url))
+      .then(data => setCurrentImage(data[0].url))
       .catch(err => console.log(err))
   }
   return (
@@ -18,6 +18,7 @@ function App() {
       <button onClick={handleGetAPOD} >
         Test
       </button>
+      {!currentImage ? null : <img src={currentImage} alt="space picture" />}
     </div>
   );
 }
