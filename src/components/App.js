@@ -18,12 +18,12 @@ function App() {
     }
   }
   return (
-    <div className="flex items-center justify-center h-screen w-screen flex-col">
+    <div className="flex items-center justify-center h-screen w-screen flex-col bg-gray-900">
       <DateForm setDate={setDate}/>
       <button onClick={handleGetAPOD} >
         Test
       </button>
-      {!currentImage ? null : <img src={currentImage} alt="NASA Space" />}
+      {!currentImage ? null : <img src={currentImage} className=" z-10" alt="NASA Space" />}
     </div>
   );
 }

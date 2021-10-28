@@ -13,7 +13,7 @@ export default function DateForm({ setDate }) {
         shadow-sm
         focus:outline-none focus:shadow-outline
         text-white
-        bg-gray-700
+        bg-gray-500
         font-medium"
         type="date" onChange={(e) => setDate(e.target.value)}/>
     </div>
