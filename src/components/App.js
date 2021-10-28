@@ -1,5 +1,6 @@
 import DateForm from "./DateForm";
 import React, { useState } from "react"
+import Background from "../assets/bg.png"
 
 function App() {
   const [date, setDate] = useState(null);
@@ -18,7 +19,8 @@ function App() {
     }
   }
   return (
-    <div className="flex items-center justify-center h-screen w-screen flex-col bg-gray-900">
+    <div className="flex items-center justify-center h-screen w-screen flex-row">
+      <img src={Background} alt="background" className="-z-10 absolute h-auto" />
       <DateForm setDate={setDate}/>
       <button onClick={handleGetAPOD} >
         Test
