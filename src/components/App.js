@@ -19,8 +19,8 @@ function App() {
     }
   }
   return (
-    <div className="flex items-center justify-center h-screen w-screen flex-row">
-      <img src={Background} alt="background" className="-z-10 absolute h-auto" />
+    <div className="flex items-center justify-center h-screen w-screen flex-row overflow-hidden">
+      <img src={Background} alt="background" className="-z-10 flex absolute h-auto backgroundImage" />
       <DateForm setDate={setDate}/>
       <button onClick={handleGetAPOD} >
         Test

@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.backgroundImage {
+  overflow: hidden;
+  animation: scroll 100s linear;
+}
+
+body{
+  overflow: hidden;
+}
+
+@keyframes scroll {
+  0%{
+    bottom: 0;
+  }
+  50%{
+    bottom: -200%;
+  }
+  100%{
+    bottom: 0;
+  }
+}
