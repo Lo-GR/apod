@@ -23,9 +23,9 @@ function App() {
     <div className="flex items-center justify-center h-screen w-screen flex-col overflow-hidden">
       <img src={Background} alt="background" className="-z-10 flex absolute h-auto backgroundImage" />
       <DateForm setDate={setDate}/>
-      <div className="flex flex-row">
-        <TWButton click={handleGetAPOD} text="test" />
-        <TWButton click={handleGetAPOD} text="test" />
+      <div className="flex flex-row w-2/6 mt-8 justify-evenly items-center">
+        <TWButton click={handleGetAPOD} text="Get APOD" />
+        <TWButton click={handleGetAPOD} text="Random APOD" />
       </div>
       {!currentImage ? null : <img src={currentImage} className=" z-10" alt="NASA Space" />}
     </div>
