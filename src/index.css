@@ -4,7 +4,7 @@
 
 .backgroundImage {
   overflow: hidden;
-  animation: scroll 100s linear;
+  animation: scroll 150s infinite;
 }
 
 body{
