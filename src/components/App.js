@@ -2,6 +2,7 @@ import DateForm from "./DateForm";
 import React, { useState } from "react"
 import Background from "../assets/bg.png"
 import TWButton from "./TWButton";
+import Header from "./Header";
 
 function App() {
   const [date, setDate] = useState(null);
@@ -30,6 +31,7 @@ function App() {
   return (
     <div className="flex items-center justify-center h-screen w-screen flex-col overflow-hidden">
       <img src={Background} alt="background" className="-z-10 flex absolute h-auto backgroundImage" />
+      <Header />
       <DateForm setDate={setDate}/>
       <div className="flex flex-row w-2/6 mt-8 justify-evenly items-center">
         <TWButton click={handleGetAPOD} text="Get APOD" />
