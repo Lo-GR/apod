@@ -38,7 +38,7 @@ function App() {
   return (
     <div className="flex items-center justify-center h-screen w-screen flex-col overflow-hidden">
       <img src={Background} alt="background" className="-z-10 flex absolute h-auto backgroundImage" />
-      <Header />
+      <Header handleGetAPOD={handleGetAPOD} handleGetRandomAPOD={handleGetRandomAPOD} currentImage={currentImage} setDate={setDate}/>
       {!currentImage ? <DateForm setDate={setDate} /> : null }
       <div className={buttonDisplay()}>
         <TWButton click={handleGetAPOD} text="Get APOD" />
