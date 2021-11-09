@@ -16,7 +16,7 @@ function App() {
         method: "GET",
       })
         .then(response => response.json())
-        .then(data => setCurrentImage(data.url))
+        .then(data => setCurrentImage(data))
         .catch(err => console.log(err))
     }
   }
@@ -25,7 +25,7 @@ function App() {
       method: "GET",
     })
       .then(response => response.json())
-      .then(data => setCurrentImage(data[0].url))
+      .then(data => setCurrentImage(data[0]))
       .catch(err => console.log(err))
   }
   const buttonDisplay = () => {
@@ -44,7 +44,8 @@ function App() {
         <TWButton click={handleGetAPOD} text="Get APOD" />
         <TWButton click={handleGetRandomAPOD} text="Random APOD" />
       </div>
-      {!currentImage ? null : <img src={currentImage} className=" z-10" alt="NASA Space" />}
+      {!currentImage ? null : <img src={currentImage.url} className=" z-10" alt="NASA Space" />}
+      {!currentImage ? null : null}
     </div>
   );
 }
