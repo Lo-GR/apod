@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import Background from "../assets/bg.png"
 import TWButton from "./TWButton";
 import Header from "./Header";
+import ImageInfo from "./ImageInfo";
 
 function App() {
   const [date, setDate] = useState(null);
@@ -44,8 +45,10 @@ function App() {
         <TWButton click={handleGetAPOD} text="Get APOD" />
         <TWButton click={handleGetRandomAPOD} text="Random APOD" />
       </div>
-      {!currentImage ? null : <img src={currentImage.url} className=" z-10" alt="NASA Space" />}
-      {!currentImage ? null : null}
+      <div className="flex flex-row items-center justify-around">
+        {!currentImage ? null : <div className="w-2/5"><a href={currentImage.hdurl}><img src={currentImage.url} className=" z-10" alt="NASA Space" /></a></div>}
+        {!currentImage ? null : <ImageInfo title={currentImage.title} date={currentImage.date} explanation={currentImage.explanation}/>}
+      </div>
     </div>
   );
 }
